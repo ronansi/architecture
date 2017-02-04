@@ -1,1 +1,1 @@
-# My project's README
+# Projeto inicial de uma arquitetura Java WEB + AngularJs
