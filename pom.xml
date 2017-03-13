@@ -192,6 +192,12 @@
 	        <artifactId>jackson-annotations</artifactId>
 	        <version>${jackson.version}</version>
 	    </dependency>
+	    
+	    <dependency>
+		    <groupId>uaihebert.com</groupId>
+		    <artifactId>uaiCriteria</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
 
 	</dependencies>
 
