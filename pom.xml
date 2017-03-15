@@ -198,6 +198,17 @@
 		    <artifactId>uaiCriteria</artifactId>
 		    <version>4.0.0</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.googlecode.genericdao</groupId>
+			<artifactId>dao</artifactId>
+			<version>1.2.0</version> <!-- use current version -->
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.genericdao</groupId>
+			<artifactId>search-jpa-hibernate</artifactId>
+			<version>1.2.0</version> <!-- use current version -->
+		</dependency>
 
 	</dependencies>
 

@@ -15,11 +15,13 @@ public class Usuario implements PersistentObject{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long id;
 	
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false, unique = true, length = 50)
 	public String login;
 	
 	@Column(nullable = false)
 	public String senha;
+	
+	public String teste;
 	
 	public Usuario() {}
 	
@@ -51,6 +53,14 @@ public class Usuario implements PersistentObject{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getTeste() {
+		return teste;
+	}
+
+	public void setTeste(String teste) {
+		this.teste = teste;
 	}
 	
 }

@@ -11,19 +11,22 @@ import com.ronan.model.Usuario;
 @Service
 public class UsuarioService extends GenericService<Usuario>{
 	
+	private UsuarioDao usuariodao;
+	
 	@Autowired
 	public UsuarioService(UsuarioDao usuarioDao) {
 		super(usuarioDao);
+		
+		this.usuariodao = usuarioDao;
 	}
 	
 	public List<Usuario> findAll(){
-		return dao.list();
+		return usuariodao.findAll();
 	}
-
+	
 	@Override
-	protected void beforeSave(Usuario entity) {}
-
-	@Override
-	protected void beforeMerge(Usuario entity) {}
+	public Usuario save(Usuario entity) {
+		return super.save(entity);
+	}
 
 }
