@@ -1,12 +1,12 @@
-package com.ronan.service;
+package arquitetura.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ronan.dao.UsuarioDao;
-import com.ronan.model.Usuario;
+import arquitetura.dao.UsuarioDao;
+import arquitetura.model.Usuario;
 
 @Service
 public class UsuarioService extends GenericService<Usuario>{

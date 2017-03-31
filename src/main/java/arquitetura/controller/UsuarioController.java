@@ -1,4 +1,4 @@
-package com.ronan.controller;
+package arquitetura.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ronan.model.Usuario;
-import com.ronan.service.UsuarioService;
+import arquitetura.model.Usuario;
+import arquitetura.service.UsuarioService;
 
 @RestController
 @RequestMapping("usuario")

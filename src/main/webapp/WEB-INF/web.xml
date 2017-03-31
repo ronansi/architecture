@@ -23,7 +23,7 @@
 	<!-- CORS Filter -->
     <filter>
         <filter-name>cors</filter-name>
-        <filter-class>com.ronan.filter.CORSFilter</filter-class>
+        <filter-class>arquitetura.filter.CORSFilter</filter-class>
     </filter>
 
     <filter-mapping>

@@ -1,4 +1,4 @@
-package com.ronan.model;
+package arquitetura.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

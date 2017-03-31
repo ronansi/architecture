@@ -1,4 +1,4 @@
-package com.ronan.controller;
+package arquitetura.controller;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

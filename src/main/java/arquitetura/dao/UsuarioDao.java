@@ -1,4 +1,4 @@
-package com.ronan.dao;
+package arquitetura.dao;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.ronan.model.Usuario;
+import arquitetura.model.Usuario;
 
 @Repository("usuarioDao")
-public class UsuarioDaoImpl extends RTCGenericDaoImpl<Usuario> implements UsuarioDao {
+public class UsuarioDao extends BaseDao<Usuario> {
 
 	public List search(Usuario usuario){
 		

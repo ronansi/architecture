@@ -1,4 +1,4 @@
-package com.ronan.model;
+package arquitetura.model;
 
 import java.io.Serializable;
 
