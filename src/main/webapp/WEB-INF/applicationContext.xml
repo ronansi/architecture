@@ -53,7 +53,7 @@
 	</bean>
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-		p:packagesToScan="arquitetura.model"
+		p:packagesToScan="arquitetura.model, br.com.ronan.model"
 		p:dataSource-ref="dataSource"
 		p:jpaPropertyMap-ref="jpaPropertyMap"
 		p:jpaVendorAdapter-ref="jpaVendorAdapter" />

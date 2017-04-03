@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import arquitetura.dao.UsuarioDao;
-import arquitetura.model.Usuario;
+import br.com.ronan.model.Usuario;
 
 @Service
 public class UsuarioService extends GenericService<Usuario>{
@@ -27,6 +27,13 @@ public class UsuarioService extends GenericService<Usuario>{
 	@Override
 	public Usuario save(Usuario entity) {
 		return super.save(entity);
+	}
+	
+	public List<Usuario> listar(){
+		
+		Usuario usuario = new Usuario();
+		
+		return usuariodao.list(usuario, true, 6, "id", "login", "senha", "teste", "pessoa.nome", "pessoa.id");
 	}
 
 }

@@ -1,27 +1,32 @@
-package arquitetura.model;
+package br.com.ronan.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import arquitetura.model.PersistentObject;
 
 @Entity
 public class Usuario implements PersistentObject{
 
-	private static final long serialVersionUID = -6709871034633162948L;
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Long id;
+	private Long id;
 	
 	@Column(nullable = false, unique = true, length = 50)
-	public String login;
+	private String login;
 	
 	@Column(nullable = false)
-	public String senha;
+	private String senha;
 	
-	public String teste;
+	private String teste;
+	
+	@OneToOne(fetch = FetchType.EAGER)
+	private Pessoa pessoa;
 	
 	public Usuario() {}
 	
@@ -62,5 +67,15 @@ public class Usuario implements PersistentObject{
 	public void setTeste(String teste) {
 		this.teste = teste;
 	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	
+	
 	
 }

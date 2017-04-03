@@ -6,7 +6,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import arquitetura.model.Usuario;
+import br.com.ronan.model.Usuario;
 
 @Repository("usuarioDao")
 public class UsuarioDao extends BaseDao<Usuario> {
