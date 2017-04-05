@@ -15,6 +15,7 @@ import com.googlecode.genericdao.search.Search;
 import com.googlecode.genericdao.search.jpa.JPASearchProcessor;
 
 import arquitetura.model.PersistentObject;
+import arquitetura.util.UtilReflection;
 
 
 public class BaseDao<T extends PersistentObject> extends GenericDAOImpl<T, Long> {
@@ -70,49 +71,43 @@ public class BaseDao<T extends PersistentObject> extends GenericDAOImpl<T, Long>
 		List<T> lista = new ArrayList<T>();
 		
 		for(Map<String, Object> map : result){
-			try {
-				T obj = super.persistentClass.newInstance();
-				
-				for(Entry<String, Object> entry : map.entrySet()){
-					Object value = entry.getValue();
-					String key = entry.getKey();
-					
-					if(key.contains(".")){
-						String[] keys = key.split("\\.");
-						try {
-							java.lang.reflect.Field field = super.persistentClass.getDeclaredField(keys[0]);
-							field.setAccessible(true);
-							
-							Object objField = field.get(obj);
-							
-							if(objField == null){
-								objField = field.getType().newInstance();
-							}
-							
-							java.lang.reflect.Field fieldObj = objField.getClass().getDeclaredField(keys[1]);
-							fieldObj.setAccessible(true);
-							fieldObj.set(objField, value);
-							field.set(obj, objField);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					} else {
-						try {
-							java.lang.reflect.Field field = super.persistentClass.getDeclaredField(key);
-							field.setAccessible(true);
-							field.set(obj, value);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				}
-				lista.add(obj);
-			} catch (Exception e) {
-				e.printStackTrace();
+			T obj = UtilReflection.getInstance(persistentClass);
+			
+			for(Entry<String, Object> entry : map.entrySet()){
+				buildField(obj, entry.getKey(), entry.getValue());
 			}
+			
+			lista.add(obj);
+		}
+		return lista;
+	}
+	
+	private void buildField(Object obj, String fieldName, Object value){
+		
+		if(fieldName.contains(".")){
+			String entityName = fieldName.substring(0, fieldName.indexOf("."));
+			String nextFieldName = fieldName.substring(fieldName.indexOf(".") + 1, fieldName.length());
+			
+			Object entity = getEntity(obj, entityName);
+			
+			buildField(entity, nextFieldName, value);
+			
+			UtilReflection.setFieldValue(obj, entityName, entity);
+			
+		}else{
+			UtilReflection.setFieldValue(obj, fieldName, value);
+		}
+	}
+	
+	private Object getEntity(Object obj, String entityName) {
+		
+		Object entity = UtilReflection.getFieldValue(obj, entityName);
+		
+		if(entity == null){
+			entity = UtilReflection.getInstance(UtilReflection.getFieldType(obj.getClass(), entityName));
 		}
 		
-		return lista;
+		return entity;
 	}
 
 	private void addFiltersForObject(Object obj, Search search, boolean useIlike, int maxRecursiveLevel, int recursiveLevel, String superFieldName) {
