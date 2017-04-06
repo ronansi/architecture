@@ -1,4 +1,4 @@
-package arquitetura.filter;
+package architecture.filter;
 
 import java.io.IOException;
 

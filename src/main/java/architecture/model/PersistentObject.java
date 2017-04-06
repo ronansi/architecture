@@ -1,4 +1,4 @@
-package arquitetura.model;
+package architecture.model;
 
 public interface PersistentObject {
 

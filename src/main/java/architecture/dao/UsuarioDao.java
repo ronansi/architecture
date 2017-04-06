@@ -1,4 +1,4 @@
-package arquitetura.dao;
+package architecture.dao;
 
 import java.util.List;
 

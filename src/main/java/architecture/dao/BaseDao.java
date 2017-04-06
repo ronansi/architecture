@@ -1,4 +1,4 @@
-package arquitetura.dao;
+package architecture.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import com.googlecode.genericdao.dao.jpa.GenericDAOImpl;
 import com.googlecode.genericdao.search.Search;
 import com.googlecode.genericdao.search.jpa.JPASearchProcessor;
 
-import arquitetura.model.PersistentObject;
-import arquitetura.util.UtilReflection;
+import architecture.model.PersistentObject;
+import architecture.util.UtilReflection;
 
 
 public class BaseDao<T extends PersistentObject> extends GenericDAOImpl<T, Long> {

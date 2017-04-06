@@ -1,7 +1,7 @@
-package arquitetura.service;
+package architecture.service;
 
-import arquitetura.dao.BaseDao;
-import arquitetura.model.PersistentObject;
+import architecture.dao.BaseDao;
+import architecture.model.PersistentObject;
 
 public abstract class GenericService<T extends PersistentObject> {
 	

@@ -1,4 +1,4 @@
-package arquitetura.util;
+package architecture.util;
 
 import java.lang.reflect.Field;
 

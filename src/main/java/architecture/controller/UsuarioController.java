@@ -1,4 +1,4 @@
-package arquitetura.controller;
+package architecture.controller;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import arquitetura.service.UsuarioService;
+import architecture.service.UsuarioService;
 import br.com.ronan.model.Usuario;
 
 @RestController

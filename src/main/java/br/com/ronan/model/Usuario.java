@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import arquitetura.model.PersistentObject;
+import architecture.model.PersistentObject;
 
 @Entity
 public class Usuario implements PersistentObject{
