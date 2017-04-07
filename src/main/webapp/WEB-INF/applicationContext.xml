@@ -20,9 +20,9 @@
 		http://www.springframework.org/schema/mvc
     	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan base-package="arquitetura.controller" />
-	<context:component-scan base-package="arquitetura.dao" />
-	<context:component-scan base-package="arquitetura.service" />
+	<context:component-scan base-package="architecture.controller" />
+	<context:component-scan base-package="architecture.dao" />
+	<context:component-scan base-package="architecture.service" />
 	
 <!-- 	<bean -->
 <!-- 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
@@ -53,7 +53,7 @@
 	</bean>
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-		p:packagesToScan="arquitetura.model, br.com.ronan.model"
+		p:packagesToScan="architecture.model, br.com.ronan.model"
 		p:dataSource-ref="dataSource"
 		p:jpaPropertyMap-ref="jpaPropertyMap"
 		p:jpaVendorAdapter-ref="jpaVendorAdapter" />
